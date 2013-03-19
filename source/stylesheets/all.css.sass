@@ -1,7 +1,41 @@
 @charset "utf-8"
+@import "compass"
 @import "http://fonts.googleapis.com/css?family=Lilita+One"
 $bgColor: #93cd17
+$titleBgColor: #93cd17 //#545454
+//$titleColor: #C7243A
+$titleColor: #fefefe
 $footerBgColor: #FFFFFF
+//$contentBgColor: #F8FAD4
+$contentBgColor: #fefefe
+$pageWidth: 900px
+
+
+@mixin ts-000($op: .4)
+  text-shadow: 1px -1px rgba(0, 0, 0, $op)
+
+@mixin ts-fff($op: .7)
+  text-shadow: -1px 1px rgba(0, 0, 0, $op)
+
+@mixin line-top($op1: .2, $op2: .3)
+  border-bottom: 1px solid rgba(0, 0, 0, $op1)
+  @include box-shadow(rgba(255,255,255, $op2) 0 1px 0 inset)
+
+@mixin line-left($op1: .2, $op2: .3)
+  border-bottom: 1px solid rgba(0, 0, 0, $op1)
+  @include box-shadow(rgba(255,255,255, $op2) -1px 0 0)
+
+@mixin line-right($op1: .2, $op2: .3)
+  border-bottom: 1px solid rgba(0, 0, 0, $op1)
+  @include box-shadow(rgba(255,255,255, $op2) -1px 0 0 inset)
+
+@mixin line-bottom($op1: .2, $op2: .3)
+  border-bottom: 1px solid rgba(0, 0, 0, $op1)
+  @include box-shadow(rgba(255,255,255, $op2) 0 1px 0)
+
+@mixin box-deboss($border: .1, $shadow: .1, $highlight: 1)
+  border: 1px solid rgba(0, 0, 0, $border)
+  @include box-shadow(rgba(0, 0, 0, $shadow) -1px 1px 2px inset, rgba(255, 255, 255, $highlight) -1px 1px 0)
 
 body
   font-family: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif
@@ -13,30 +47,55 @@ a
   text-decoration: none
 
 #page
-  width: 900px
+  width: $pageWidth
   padding: 0 10px
   margin: 24px auto
 
+header
+  background-color: $titleBgColor
+  padding: 20px 0 5px 0
+
 h1#logo
-  width: 900px
+  width: $pageWidth
   padding: 0 10px
-  margin: 24px auto
+  margin: 0px auto
   font-family: 'Lilita One', cursive
   font-weight: normal
   font-size: 120px
   margin-bottom: 20px
   a, a:active, a:hover
-    color: #666
+    color: $titleColor
+
+figcaption
+  color: $titleColor
 
 .published_at
   float: right
 
-#site-footer
-  background-color: $footerBgColor
-
-.copyright
-  float: right
-  margin: 0
-
 .nextlink
   float: right
+
+.box
+  @include border-radius(5px)
+  @include box-deboss(.15, .1, .5)
+  background-color: $contentBgColor
+  padding: 20px
+  ul
+    margin-left: 0
+    margin-bottom: 0
+    li
+      list-style: none
+
+footer
+  @include line-top
+  #site-footer
+    margin: 0 auto
+    width: $pageWidth
+    p
+      font-size: 13px
+      color: $titleColor
+      clear: both
+      line-height: 50px
+      margin: 0
+      position: relative
+      width: 100%
