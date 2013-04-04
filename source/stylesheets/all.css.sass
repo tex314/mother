@@ -15,7 +15,7 @@ $pageWidth: 900px
   text-shadow: 1px -1px rgba(0, 0, 0, $op)
 
 @mixin ts-fff($op: .7)
-  text-shadow: -1px 1px rgba(0, 0, 0, $op)
+  text-shadow: -1px 1px rgba(255, 255, 255, $op)
 
 @mixin line-top($op1: .2, $op2: .3)
   border-bottom: 1px solid rgba(0, 0, 0, $op1)
@@ -71,6 +71,7 @@ figcaption
 
 .published_at
   float: right
+  font-size: 80%
 
 .nextlink
   float: right
@@ -99,3 +100,8 @@ footer
       margin: 0
       position: relative
       width: 100%
+
+h2
+  @include ts-fff(0.7)
+  padding-left: 18px
+  font-size: 24px
