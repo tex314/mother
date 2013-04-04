@@ -15,3 +15,5 @@
 
 /.rvmrc
 /Gemfile.lock
+
+/config.rb
