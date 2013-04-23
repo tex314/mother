@@ -105,3 +105,33 @@ h2
   @include ts-fff(0.7)
   padding-left: 18px
   font-size: 24px
+
+
+.pager li > a, .pager li > span
+  background-color: #FFFFFF
+  border: 1px solid #DDDDDD
+  border-radius: 15px 15px 15px 15px
+  display: inline-block
+  padding: 5px 14px
+
+.pager li
+  display: inline
+  line-height: 20px
+
+.pager:after
+  clear: both
+
+.pager:before, .pager:after
+  content: ""
+  display: table
+  line-height: 0
+
+.pager:before, .pager:after
+  content: ""
+  display: table
+  line-height: 0
+
+.pager
+  list-style: none outside none
+  margin: 20px 0
+  text-align: center

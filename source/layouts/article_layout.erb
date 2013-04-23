@@ -3,4 +3,16 @@
   <div class="box">
     <%= yield %>
   </div>
+  <ul class="pager">
+    <% if data.page.prev_link %>
+      <li>
+        <%= link_to("&larr; #{data.page.prev_link}", "#{data.page.prev_link}.html") %>
+      </li>
+    <% end %>
+    <% if data.page.next_link %>
+      <li>
+        <%= link_to("#{data.page.next_link} &rarr;", "#{data.page.next_link}.html") %>
+      </li>
+    <% end %>
+  </ul>
 <% end %>
