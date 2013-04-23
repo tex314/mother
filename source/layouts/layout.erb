@@ -13,10 +13,7 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="stylesheets/normalize.css">
-        <link rel="stylesheet" href="stylesheets/kube.min.css">
-        <link rel="stylesheet" href="stylesheets/all.css">
-        <script src="javascript/vendor/modernizr-2.6.1.min.js"></script>
+        <%= stylesheet_link_tag "normalize", "kube.min", "all" %>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -30,14 +27,12 @@
           <div class="row split">
             <div class="twofifth">
               <figure>
-                <img src="images/rock.gif">
+                <%= image_tag "rock.gif" %>
                 <figcaption>Illustration by Baobab</figcaption>
               </figure>
             </div>
             <div class="threefifth">
-              <div class="box">
-                <%= yield %>
-              </div>
+              <%= yield %>
             </div>
           </div>
         </div>
@@ -49,10 +44,8 @@
           </div>
         </footer>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="javascripts/vendor/jquery-1.8.0.min.js"><\/script>')</script>
-        <script src="javascripts/plugins.js"></script>
-        <script src="javascripts/main.js"></script>
+        <%= javascript_include_tag 'jquery.min' %>
+        <%= javascript_include_tag 'all'%>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

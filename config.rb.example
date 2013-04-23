@@ -1,7 +1,9 @@
-activate :syntax
+# -*- coding: utf-8 -*-
+###
+# Blog settings
+###
 
-set :markdown, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true, :with_toc_data => true, :hard_wrap => true
-set :markdown_engine, :redcarpet
+## page "/feed.xml", :layout => false
 
 ###
 # Compass
@@ -27,6 +29,8 @@ set :markdown_engine, :redcarpet
 #
 # With alternative layout
 # page "/path/to/file.html", :layout => :otherlayout
+page "/index.html", :layout => :index_layout
+page "/articles/*", :layout => :article_layout
 #
 # A path which all have the same layout
 # with_layout :admin do
@@ -79,4 +83,16 @@ configure :build do
 
   # Or use a different image path
   # set :http_path, "/Content/images/"
+end
+
+activate :syntax
+set :markdown, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true, :with_toc_data => true, :hard_wrap => true
+set :markdown_engine, :redcarpet
+
+activate :deploy do |deploy|
+  deploy.method = :ftp
+  deploy.host = "ftp.example.com"
+  deploy.user = "tvaughan"
+  deploy.password = "secret"
+  deploy.path = "/srv/www/site"
 end
