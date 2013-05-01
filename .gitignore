@@ -13,7 +13,4 @@
 # Ignore Sass' cache
 /.sass-cache
 
-/.rvmrc
-/Gemfile.lock
-
 /config.rb
