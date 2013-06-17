@@ -1,3 +1,5 @@
+# How to build the site.
+
 ## Clone repository
 
     $ git clone git@github.com:tex314/mother.git
@@ -37,3 +39,5 @@
 ## Check the site
 
     $ open http://mother.okzk.org/
+
+
