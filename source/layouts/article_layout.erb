@@ -1,17 +1,17 @@
 <% wrap_layout :layout do %>
-  <h2 class="pager-title"><%= data.page.title %></h2>
+  <h2 class="pager-title"><%= current_page.data.title %></h2>
   <div class="box">
     <%= yield %>
   </div>
   <ul class="pager">
-    <% if data.page.prev_link %>
+    <% if  current_page.data.prev_link %>
       <li>
-        <%= link_to("&larr; #{data.page.prev_link}", "#{data.page.prev_link}.html") %>
+        <%= link_to("&larr; #{ current_page.data.prev_link}", "#{ current_page.data.prev_link}.html") %>
       </li>
     <% end %>
-    <% if data.page.next_link %>
+    <% if  current_page.data.next_link %>
       <li>
-        <%= link_to("#{data.page.next_link} &rarr;", "#{data.page.next_link}.html") %>
+        <%= link_to("#{ current_page.data.next_link} &rarr;", "#{ current_page.data.next_link}.html") %>
       </li>
     <% end %>
   </ul>
